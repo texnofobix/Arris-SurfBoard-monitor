@@ -8,7 +8,7 @@ Hopoefully this will help.
 
 
 
-This script scrapes the logs and can status messages based on the most recent log entry.  This has been tested on an Arris SB6141.
+This script scrapes the logs and can send status messages based on the most recent log entry.  This has been tested on an Arris SB6141.
 
 
 
