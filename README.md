@@ -4,10 +4,11 @@
 
 I was tired of wondering if it was me or the ISP...
 
-Hopoefully this will help.
+Hopoefully this will help. 
 
 
-This script scrapes the logs and can will send status messages based on the most recent log entry.
+
+This script scrapes the logs and can status messages based on the most recent log entry.  This has been tested on an Arris SB6141.
 
 
 
