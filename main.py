@@ -17,11 +17,9 @@ def go():
     try:
         r = session.get('http://192.168.100.1/cmLogsData.htm')
     except ConnectionError:
-        print('There is a connection error')
-        return True
+        return 'There is a connection error'
     except OSError:
-        print('network is disconnected')
-        return True
+        return 'network is disconnected'
     # Select the log messages
     messages = r.html.find('body > center > table > tbody > tr')
     # get a list of the values of the latest message
@@ -36,16 +34,16 @@ def go():
         }
         # This is the message ID that preceeds a modem reboot.  T4 Timeout
         if log.get('id') == 'R04.0':
-            print(f'Status: 1 Now: {datetime.now()} Message Time: {log.get("date")} {log.get("id")} ')
+            status = 1
         else:
-            print(f'Status 0  Now: {datetime.now()} Message Time: {log.get("date")} {log.get("id")}')
+            status =0 
+        return f'Status {status}  Now: {datetime.now()} Message Time: {log.get("date")} {log.get("id")}'
     except IndexError:
-        print(f'There are no log messages! {datetime.now()}')
-
+        return f'There are no log messages! {datetime.now()}'
 
 if __name__ == "__main__":
     while True:
-        go()
+        print(go())
         sleep(2)
 
 
